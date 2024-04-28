@@ -3,29 +3,19 @@ import './App.css'
 import conf from '../conf/conf'
 import { authService } from '../appwrite/auth'
 import { service } from '../appwrite/config'
+import { useDispatch, useSelector } from 'react-redux'
+import { login, logout } from '../store/authSlice'
+import { Outlet } from 'react-router-dom'
 
 function App() {
-  const [count, setCount] = useState(0)
-  // const email = "1@1.com"
-  // const password = 123
-  // console.log(authService.createAccount({email, password}))
-  // console.log(service.createPost({
-  //   title : "title", 
-  //   content : "content", 
-  //   featuredImage : "featuredImage", 
-  //   status : "active", 
-  //   userId : "userId", 
-  //   slug : "slug"}))
+  const status = useSelector((state) => state.auth.status)
+  const dispatch = useDispatch(logout());
+
   return (
     <div className='w-full '>
-      <h1 className='text-3xl p-4 font-bold'>Blog Website </h1>
-      <ul>
-      <li>APP URL : {conf.appwriteUrl}</li>
-      <li>PROJECT ID : {conf.appwriteProjectId}</li>
-      <li>DATABASE ID : {conf.appwriteDatabaseId}</li>
-      <li>COLLECTION ID : {conf.appwriteCollectionId}</li>
-      <li>BUCKET ID : {conf.appwriteBucketId}</li>
-      </ul>
+      <main>
+        <Outlet></Outlet>
+      </main>
     </div>
   )
 }
