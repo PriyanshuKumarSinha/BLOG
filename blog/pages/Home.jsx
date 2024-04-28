@@ -4,7 +4,7 @@ import Button from '../src/components/Button'
 import Input from '../src/components/Input'
 import Select from '../src/components/Select'
 import PostCard from '../src/components/PostCard'
-import Footer from '../src/components/Footer'
+import Footer from '../src/components/Footer/Footer'
 
 function Home() {
   const options = ["lorem", "ipsum", "hello"]
