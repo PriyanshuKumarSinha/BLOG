@@ -1,12 +1,9 @@
 import React from 'react'
-import Container from '../src/components/container/Container'
+import AllPosts from './AllPosts'
 
 function Home() {
-  const options = ["lorem", "ipsum", "hello"]
   return (
-    <Container>
-      Home
-    </Container>
+    <AllPosts />
   )
 }
 

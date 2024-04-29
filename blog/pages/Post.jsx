@@ -8,7 +8,7 @@ import Button from '../src/components/Button';
 
 function Post() {
   const [post, setPost] = useState(null);
-  const slug = useParams(); //{slug : ""}
+  const {slug} = useParams(); //{slug : ""}
   const navigate = useNavigate();
   const userData = useSelector((state) => state.auth.userData);
 
