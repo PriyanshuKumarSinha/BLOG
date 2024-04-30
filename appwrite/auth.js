@@ -32,8 +32,7 @@ export class AuthService{
     }
     async login({email, password}){
         try {
-            const session =  await this.account.createEmailSession(email, password)
-            return session;
+            return  this.account.createEmailPasswordSession(email, password)
             // returns a session, an object having session id $id, userId, ip, and many other information about the user and their device
         } catch (error) {
             console.log("Appwrite Service :: login :: error ", error);

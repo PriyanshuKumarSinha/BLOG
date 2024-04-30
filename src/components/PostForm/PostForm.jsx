@@ -45,7 +45,7 @@ function PostForm({post}) {
                     userId : userData.$id
                 })
                 if(dbPost) {
-                    navigate(`/post/${dbPost.post.$id}`);
+                    navigate(`/post/${dbPost.$id}`);
                 }
             }
         }
